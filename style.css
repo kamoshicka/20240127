@@ -10,7 +10,7 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
- *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
     all: unset;
     display: revert;
 }
@@ -30,12 +30,16 @@ html {
 }
 
 /* Reapply the pointer cursor for anchor tags */
-a, button {
+a,
+button {
     cursor: revert;
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu, summary {
+ol,
+ul,
+menu,
+summary {
     list-style: none;
 }
 
@@ -51,7 +55,8 @@ table {
 }
 
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input, textarea {
+input,
+textarea {
     -webkit-user-select: auto;
 }
 
@@ -125,19 +130,19 @@ header {
     z-index: 999;
 }
 
-header .container {
+.container{
     width: 100%;
     padding: 0 48px 0 48px;
     height: auto;
-    position: absolute; 
+    position: absolute;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 header h1 {
+    display: inline-block;
     margin-top: 42px;
     font-size: 36px;
 }
@@ -150,10 +155,10 @@ header ul {
 header ul li {
     margin-right: 24px;
     font-size: 24px;
-    
+
 }
 
-.top ul li img{
+.top ul li img {
     width: 100vw;
     object-fit: cover;
     height: 100vh;
@@ -179,8 +184,7 @@ header ul li {
 }
 
 #pic2,
-#pic3
- {
+#pic3 {
     animation-iteration-count: infinite;
     position: absolute;
     left: 0;
@@ -274,7 +278,7 @@ header ul li {
     margin-left: 48px;
     margin-top: 1000px;
     font-family: Georgia, serif;
-    
+
 }
 
 .copy_en {
@@ -285,11 +289,13 @@ header ul li {
 .copy_ja {
     font-size: 36px;
     padding-left: 24px;
+    text-align: center;
 }
 
 
 .concept {
-    width: 1080px;
+    width: 100%;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -301,7 +307,7 @@ h2 {
 }
 
 h2::after {
-    content:"";
+    content: "";
     border-bottom: 4px solid black;
     width: 200px;
     display: inline-block;
@@ -323,7 +329,7 @@ h2::after {
     font-weight: bold;
 }
 
-.concept_dual p{
+.concept_dual p {
     padding-top: 36px;
 }
 
@@ -339,7 +345,7 @@ h3 {
 .Works {
     object-fit: cover;
     margin: 0 auto;
-    background-image: url(works-bgi@2x.jpg) ;
+    background-image: url(works-bgi@2x.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -349,6 +355,7 @@ h3 {
     color: white;
     text-align: right;
 }
+
 .Works h2::after {
     border-color: white;
 }
@@ -402,7 +409,8 @@ button {
     text-align: center;
     padding-top: 180px;
 }
-.service_example ul li a{
+
+.service_example ul li a {
     font-family: Georgia, serif;
     color: white;
     font-weight: bold;
@@ -410,19 +418,21 @@ button {
 }
 
 #service1 {
-    background-image:url(service-img01@2x.jpg);
-    background-size: cover;
-}
-#service2 {
-    background-image:url(service-img02@2x.jpg);
-    background-size: cover;
-}
-#service3 {
-    background-image:url(sevice-img03@2x.jpg);
+    background-image: url(service-img01@2x.jpg);
     background-size: cover;
 }
 
-.service_opacity{
+#service2 {
+    background-image: url(service-img02@2x.jpg);
+    background-size: cover;
+}
+
+#service3 {
+    background-image: url(sevice-img03@2x.jpg);
+    background-size: cover;
+}
+
+.service_opacity {
     margin-right: 108px;
 }
 
@@ -442,7 +452,7 @@ button {
     border-color: white;
 }
 
-.contact p{
+.contact p {
     text-align: center;
     color: white;
     font-size: 24px;
@@ -460,7 +470,7 @@ button {
 }
 
 footer {
-    padding: 36px 0 80px 0;
+    padding: 36px 0 36px 0;
     text-align: center;
 }
 
@@ -468,4 +478,176 @@ small {
     font-size: 14px;
     font-family: Georgia, serif;
     font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.copy_ja_br {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    header h1 {
+        display: inline-block;
+    }
+    .menu_pc {
+        display: none;
+    }
+
+    #open {
+        display: flex;
+        flex-direction: column;
+        width: 36px;
+        margin-top: 48px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    #open span {
+        border-bottom: 3px solid white;
+        padding-top: 8px;
+    }
+
+    #close {
+        display: block;
+        left: 75vw;
+        top: 25vh;
+        width: 48px;
+        position: relative;
+    }
+    #close_1{
+        position: relative;
+        display: inline-block;
+        border-bottom: 3px white solid;
+        width: 24px;
+        transform:rotate(45deg);
+    }
+
+    #close_1::before{
+        content: "";
+        position: absolute;
+        border-bottom: 3px white solid;
+        width: 24px;
+        transform:rotate(90deg);
+    }
+
+    .copy_en {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .copy_ja {
+        font-size: 24px;
+    }
+
+    .copy_ja_br {
+        display: block;
+    }
+
+    .concept_center p {
+        text-align: center;
+    }
+
+    .concept_dual {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .works_cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .works_card {
+        max-width: 400px;
+    }
+
+    .works_card img {
+        width: 100%;
+    }
+
+    .service_example ul {
+        display: flex;
+        flex-direction: column;
+        height: 1000px;
+        gap: 36px;
+    }
+
+    .service_example ul li {
+        height: 330px;
+        padding-top: 150px;
+
+    }
+
+    .service_example ul li a {
+        font-size: 36px;
+    }
+
+    #service1 {
+        background-size: contain 100%;
+    }
+
+    .contact h2 {
+        text-align: right;
+        padding: 120px 0 0 0;
+        color: white;
+    }
+
+    .contact h2::after {
+        border-color: white;
+        width: 20%;
+    }
+
+    .contact_opacity {
+        margin: 0;
+        opacity: .3;
+        font-size: 48px;
+    }
+
+    #layer {
+        background: #282f35;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+
+
+    .catchcopy {
+        display: none;
+    }
+
+    #modal_all {
+        position: fixed;
+        width: 100%;
+    }
+
+    #modal_all ul {
+        display: block;
+        top: 50vh;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    #modal_all ul li {
+        display: block;
+        color: white;
+        padding-bottom: 48px;
+        text-align: center;
+        font-size: 24px;
+    }
+
 }

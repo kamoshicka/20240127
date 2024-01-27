@@ -13,15 +13,37 @@
         <div class="container">
             
         <h1>Cresta Design</h1>
-        <ul>
+        <ul class="menu_pc">
             <li><a href="#">Concept</a></li>
             <li><a href="#">Service</a></li>
             <li><a href="#">Works</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
+
+        <div class="hamburger" id="open">
+            <span></span><span></span><span></span>
+        </div>
+        <section id="modal_all" class="hidden">
+            <div id="layer" class="hidden"></div>
+                
+                    <div id="close">
+                        <span id="close_1"></span><span id="close_2"></span>
+                    </div>
+
+                        <ul>
+                            <li>Concept</li>
+                            <li>Service</li>
+                            <li>Works</li>
+                            <li>Content</li>
+                        </ul>
+
+                </section>
+              
+            
+        
         <div class="catchcopy">
-            <p class="copy_en">Design for Smile</p>
-            <p class="copy_ja">快適なオフィスをデザインする</p>
+            <p class="copy_en hidden">Design for Smile</p>
+            <p class="copy_ja hidden">快適なオフィスを<br class="copy_ja_br">デザインする</p>
         </div>
     </div>
     </header>
@@ -90,13 +112,14 @@
     <section class="contact">
         <h2>Contact</h2>
         <p>お気軽にご相談ください。</p>
-        <button>Contact</button>
+        <button><a href="contact.html">Contact</a></button>
         <h3 class="contact_opacity">Cotnact us</h3>
     </section>
 
     <footer>
         <small>©cresta.design all rights reserved</small>
     </footer>
+    <script src="main.js"></script>
 </body>
 
 </html>
